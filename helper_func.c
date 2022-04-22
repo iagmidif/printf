@@ -20,6 +20,8 @@ int print_func(va_list params, char specifier)
 			break;
 		case 's':
 			str = va_arg(params, char *);
+			if (!str)
+				str = "(null)";
 			while (*(str + i))
 			{
 				count += _putchar(*(str + i));
