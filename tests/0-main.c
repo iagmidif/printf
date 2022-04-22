@@ -20,5 +20,11 @@ int main(void)
 	printf("String:[%s]\n", "I am a string !");
 	_printf("%c m%s com%c%c%s%cone %%%cY%s %c%s%c", 'A', "ore", 'p', 'l', "ex", ' ', ' ', "es", 'H', "ello", '\n');
 	printf("%c m%s com%c%c%s%cone %%%cY%s %c%s%c", 'A', "ore", 'p', 'l', "ex", ' ', ' ', "es", 'H', "ello", '\n');
+	_printf('\0');
+	printf('\0');
+	_printf("%s%c\n");
+	printf("%s%c\n");
+	_printf("");
+	printf("");
 	return (0);
 }
