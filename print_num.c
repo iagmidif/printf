@@ -29,3 +29,31 @@ int print_int(va_list params)
 	free(str);
 	return (count);
 }
+
+/**
+ * print_binary - converts a unsigned integer to binary and then prints it
+ * @params: va_list arguments
+ *
+ * Returns: number of chars printed
+ */
+int print_binary(va_list params)
+{
+	int binary[32], i = 0, j = 0;
+	unsigned int n = va_arg(params, unsigned int);
+	int count = 0;
+
+	while (i < 32 && n > 1)
+	{
+		binary[i] = n % 2;
+		n /= 2;
+		i++;
+	}
+	if (n == 1)
+	{
+		binary[i] = 1;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+		count += _putchar(binary[j] + '0');
+	return (count);
+}
