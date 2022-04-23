@@ -13,11 +13,12 @@ int (*get_handler(char c))(va_list params)
 		{'c', print_char},
 		{'s', print_str},
 		{'i', print_int},
-		{'d', print_int}
+		{'d', print_int},
+		{'b', print_binary}
 	};
 	int i;
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 5; i++)
 		if (arr[i].c == c)
 			return (arr[i].f);
 	return (NULL);
