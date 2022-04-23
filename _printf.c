@@ -4,18 +4,19 @@
  * _printf - simplified duplicate of printf
  * @format: pointer to the format string
  *
- * Return: mnumber of characters printed on a valid format string
+ * Return: number of characters printed on a valid format string
  * -1 otherwise.
  */
 int _printf(const char *format, ...)
 {
 	va_list params;
+	int (*pfunc)(va_list);
 	int printed = 0;
 	const char *ptr;
 
 	va_start(params, format);
-	if (!format || (format[0] == '%' && (!format[1]
-					|| (format[1] == ' ' && !format[2]))))
+	if (!format || (format[0] == '%' &&
+	(!format[1] || (format[1] == ' ' && !format[2]))))
 		return (-1);
 	ptr = format;
 	for (; *ptr; ptr++)
@@ -28,10 +29,10 @@ int _printf(const char *format, ...)
 				printed += _putchar('%');
 				continue;
 			}
-			if (*ptr == 's' || *ptr == 'c')
-				printed += print_func(params, *ptr);
-			else
-				printed += _printf("%%%c", *ptr);
+			pfunc = get_handler(*ptr);
+			printed += (pfunc)
+					? pfunc(params)
+					: _printf("%%%c", *ptr);
 		}
 		else
 			printed += _putchar(*ptr);
