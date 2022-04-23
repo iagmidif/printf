@@ -34,7 +34,7 @@ int print_int(va_list params)
  * print_binary - converts a unsigned integer to binary and then prints it
  * @params: va_list arguments
  *
- * Returns: number of chars printed
+ * Return: number of chars printed
  */
 int print_binary(va_list params)
 {
