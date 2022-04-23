@@ -42,7 +42,7 @@ int print_binary(va_list params)
 	unsigned int n = va_arg(params, unsigned int);
 	int count = 0;
 
-	if (n = 0)
+	if (n == 0)
 		count += _putchar(0 + '0');
 	while (i < 32 && n > 1)
 	{
