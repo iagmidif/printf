@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				printed += _putchar('%');
 				continue;
 			}
-			if (*ptr == 's' || *ptr == 'c') 
+			if (*ptr == 's' || *ptr == 'c')
 				printed += print_func(params, *ptr);
 			else
 				printed += _printf("%%%c", *ptr);
