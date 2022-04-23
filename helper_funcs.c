@@ -12,6 +12,8 @@ int (*get_handler(char c))(va_list params)
 	map arr[] = {
 		{'c', print_char},
 		{'s', print_str},
+		{'i', print_int},
+		{'d', print_int}
 	};
 	int i;
 
