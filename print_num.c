@@ -38,7 +38,7 @@ int print_int(va_list params)
  */
 int print_binary(va_list params)
 {
-	int binary[32], i = 0, j = 0;
+	int binary[64], i = 0, j = 0;
 	unsigned int n = va_arg(params, unsigned int);
 	int count = 0;
 
