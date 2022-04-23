@@ -28,7 +28,10 @@ int _printf(const char *format, ...)
 				printed += _putchar('%');
 				continue;
 			}
-			printed += print_func(params, *ptr);
+			if (*ptr == 's' || *ptr == 'c')
+				printed += print_func(params, *ptr);
+			else
+				printed += _printf("%%%c", *ptr);
 		}
 		else
 			printed += _putchar(*ptr);
