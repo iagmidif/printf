@@ -29,5 +29,5 @@ int print_int(va_list params)
 		count += _putchar(*str);
 		str++;
 	}
-	return (0);
+	return (count);
 }
