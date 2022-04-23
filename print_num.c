@@ -17,7 +17,8 @@ int print_int(va_list params)
 	count = 0;
 	len = snprintf(NULL, 0, "%d", n);
 	str = malloc(len + 1);
-
+	if (!str)
+		return (0);
 	snprintf(str, len + 1, "%d", n);
 	while (*str)
 	{
