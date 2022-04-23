@@ -22,5 +22,6 @@ int (*get_handler(char c))(va_list params);
 int print_char(va_list params);
 int print_str(va_list params);
 int print_int(va_list params);
+int print_binary(va_list params);
 
 #endif
