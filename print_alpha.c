@@ -9,7 +9,7 @@
  */
 int print_char(va_list params)
 {
-	return(_putchar(va_arg(params, int)));
+	return (_putchar(va_arg(params, int)));
 }
 
 /**
