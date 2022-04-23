@@ -39,9 +39,11 @@ int print_int(va_list params)
 int print_binary(va_list params)
 {
 	int binary[32], i = 0, j = 0;
-	unsigned int n = va_arg(params, unsigned int);
+	int n = va_arg(params, int);
 	int count = 0;
 
+	if (n < -1)
+		n *= -1;
 	while (i < 32 && n > 1)
 	{
 		binary[i] = n % 2;
